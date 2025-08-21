@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="productos naturales" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Yaneiddy Gelvez" />
+    <title>Inicio - EQ HGW</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/edef24d518.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="logo.png" alt="logo" />
+        <h4>EQ-HGW</h4>
+      </div>
+
+      <!-- Botón hamburguesa -->
+      <div class="hamburguesa">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <!-- Menú de enlaces -->
+      <nav class="links">
+        <a href="index.html" class="one">Inicio</a>
+        <a href="nosotros.html" class="one">Nosotros</a>
+        <a href="productos.html" class="one">Productos</a>
+        <a href="testimonios.html" class="one">Testimonios</a>
+      </nav>
+
+      <!-- Barra de búsqueda -->
+      <form class="busqueda" action="#" method="get">
+        <input type="text" name="q" placeholder="Buscar..." />
+        <button type="submit">🔍</button>
+      </form>
+    </header>
+
+    <main>
+      <!-- Sección inicio -->
+      <div id="inicio">
+        <img class="imagencafe" src="cafeinicio.jpg" alt="café" />
+        <img class="imagencafe" src="cafeinicio.jpg" alt="café" />
+        <img src="cafeinicio.jpg" alt="café" />
+        <img src="cafeinicio.jpg" alt="café" />
+        <div class="bloque-inicio">
+          <h1>Bienvenido a EQ-HGW</h1>
+          <p>Para un estilo de vida saludable</p>
+        </div>
+      </div>
+
+      <!-- Sección servicios -->
+      <section id="servicios">
+        <div class="servicio">
+          <img src="toalla.jpeg" alt="Productos naturales 1" />
+          <h2>Productos</h2>
+          <p>Aquí puedes ver los productos que tenemos disponibles para ti</p>
+          <a href="/productos.html">Ver más</a>
+        </div>
+
+        <div class="servicio">
+          <img src="jabon.jpeg" alt="Productos naturales 2" />
+          <h2>Testimonios</h2>
+          <p>
+            Los testimonios de nuestros clientes que se han decidido por los
+            beneficios de nuestros productos
+          </p>
+          <a href="/testimonios.html">Ver más</a>
+        </div>
+
+        <div class="servicio">
+          <img src="cremadental.jpeg" alt="Productos naturales 3" />
+          <h2>Compañía</h2>
+          <p>Las historias de éxito de nuestros socios</p>
+          <a href="/socios.html">Ver más</a>
+        </div>
+      </section>
+    </main>
+    <!-- Script menú hamburguesa -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="funciones.js"></script>
+  </body>
+  <footer class="footer">
+    <p>© 2025 EQ-HGW - Todos los derechos reservados</p>
+  </footer>
+</html>

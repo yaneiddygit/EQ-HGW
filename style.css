@@ -1,0 +1,689 @@
+/*---------RESET---------coloca todo el documento con margin 0 y paddig 0*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*el ancho y alto incluyen también el padding y el border*/
+}
+/*-----------configuración fuente----------*/
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+
+/*-------BODY----*/
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex; /*facilita organizar y alinear elementos en filas o columnas*/
+  justify-content: center; /*alineación horizonta*/
+  align-items: center; /*alineación vertical*/
+  width: 100%;
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+  position: relative; /*El elemento se mantiene en el flujo norma*/
+  height: 100%;
+  font-family: "Poiret One", sans-serif;
+}
+main {
+  height: 100%;
+  width: 100%;
+}
+/* Fondo con imagen tenue */
+body::before {
+  content: "";
+  position: fixed; /*El elemento se queda fijo en la pantalla aunque hagas scrol*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/img/logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /*La imagen cubre todo el contenedor*/
+  opacity: 0.1;
+  z-index: -1;
+}
+/* ==== HEADER ==== */
+.header {
+  display: flex;
+  justify-content: space-between; /*el primer elemento queda a la izquierda, el último a la derecha y los demás se reparten en el espacio intermedio*/
+  align-items: center;
+  /*flex-wrap: wrap; -Para que se adapte en pantallas pequeñas */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: rgb(41, 178, 73);
+  color: white;
+  z-index: 2;
+  height: 100px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /*controlar la separación (espacio) entre los elementos hijos*/
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  object-fit: cover; /*La imagen cubre todo el contenedor*/
+}
+
+.logo h4 {
+  font-size: 25px;
+  color: white;
+}
+
+/* ==== MENÚ ==== */
+.header .links {
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap; /*indicar si los elementos hijos deben ajustarse en varias filas o columnas cuando no caben en una sola línea*/
+}
+
+.header .links a {
+  text-decoration: none; /*quitar el subrayado de enlaces*/
+  font-size: 25px;
+  color: white;
+}
+
+.header .links a:hover {
+  color: #d4ffd9;
+  background-color: blue;
+  border-radius: 5px;
+}
+
+/* -----Barra de búsqueda -------*/
+.busqueda {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.busqueda input {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.busqueda button {
+  padding: 5px 10px;
+  background: #2e8b57;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.busqueda button:hover {
+  background-color: #09742b;
+}
+
+/* ==== BOTÓN HAMBURGUESA ==== */
+.hamburguesa {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ==== INICIO ==== */
+#inicio {
+  position: relative;
+  display: flex;
+  top: 100px;
+  width: 100%;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+}
+#inicio img {
+  filter: grayscale(0.8);
+  width: 25%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bloque-inicio {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: yellow;
+  text-shadow: 2px 2px black;
+}
+
+#inicio .bloque-inicio h1 {
+  color: rgb(249, 253, 4);
+  font-size: 50px;
+  text-align: center;
+  text-shadow: 3px 0 black;
+  font-weight: 800;
+}
+
+#inicio .bloque-inicio p {
+  margin-top: 35px;
+  color: rgb(124, 0, 190);
+  font-size: 30px;
+  text-align: center;
+  font-weight: 600;
+  text-shadow: 2px 0 black;
+}
+/* ==== SERVICIOS ==== */
+#servicios {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 40px;
+  background: #f8fff8; /* color suave de fondo */
+}
+
+#servicios .servicio {
+  background: #b7fbb7;
+  border: 1px solid green;
+  border-radius: 12px;
+  width: 500px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+/* Efecto hover */
+.servicio:hover {
+  transform: translateY(-5px);
+}
+
+.servicio img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+/* Texto */
+#servicios .servicio h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+#servicios .servicio p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Enlace */
+#servicios .servicio a {
+  display: inline-block;
+  padding: 10px 15px;
+  background: green;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+#servicios .servicio a:hover {
+  background: darkgreen;
+}
+
+/*-----NOSOTROS----*/
+
+/* TARJETAS DE TEXTO */
+.nosotros {
+  width: 100%;
+  position: relative;
+  top: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  background-color: #bbf7ce;
+  margin: 50px;
+  width: 600px;
+  height: 300px;
+  border: 2px solid #28a745;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  color: #087a22;
+  font-size: 40px;
+  margin: 20px;
+  text-align: center;
+}
+
+.card p {
+  font-size: 18px;
+  margin: 30px;
+  text-align: justify;
+}
+
+/*------PRODUCTOS ----*/
+.categorias {
+  top: 100px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 20px 20px; /* espacio filas y columnas */
+  justify-items: center;
+  align-items: center;
+  width: 90%;
+  margin: 50px auto;
+}
+
+.categoria {
+  text-align: center;
+}
+
+.categoria img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* Ajusta bien la imagen */
+  border-radius: 50%; /* Hace los íconos circulares */
+  border: 2px solid #ddd;
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.categoria img:hover {
+  transform: scale(1.1);
+  border: 2px solid #28a745; /* borde verde al pasar el mouse */
+}
+
+.categoria p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+/*---- TESTIMONIOS ----*/
+#testimonios,
+#otros-testimonios {
+  position: relative;
+  top: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 10px;
+  background: #f8fff8; /* color suave de fondo */
+}
+
+/* Cada tarjeta */
+#testimonios .testimonio,
+#otros-testimonios .testimonio {
+  background: #b7fbb7;
+  border: 1px solid green;
+  border-radius: 12px;
+  width: 500px;
+  height: 400px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+/* Efecto hover */
+#testimonios .testimonio:hover,
+#otros-testimonios .testimonio:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagen */
+#testimonios .testimonio img,
+#otros-testimonios .testimonio img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+/* Texto */
+#testimonios .testimonio h2,
+#otros-testimonios .testimonio h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+#testimonios .testimonio p,
+#otros-testimonios .testimonio p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Enlace */
+#testimonios .testimonio a,
+#otros-testimonios .testimonio a {
+  display: inline-block;
+  padding: 10px 15px;
+  background: green;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  /*transition: background 0.3s ease;*/
+}
+
+#testimonios .testimonio a:hover,
+#otros-testimonios .testimonio a:hover {
+  background: darkgreen;
+}
+
+/* ==== FOOTER ==== */
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 0;
+  margin-top: 0;
+}
+
+/* ================== MEDIA QUERIES ================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  #inicio img {
+    width: 25%;
+  }
+}
+/* Celulares */
+@media (max-width: 768px) {
+  header {
+    height: 10px;
+    width: 100%;
+    padding: 0;
+  }
+  header .logo img {
+    height: inherit;
+    width: 80px;
+  }
+  header .logo h4 {
+    font-size: 25px;
+    margin-right: 20px;
+  }
+  header .hamburguesa {
+    display: block;
+    font-size: 40px;
+    align-items: center;
+    justify-content: center;
+    color: rgb(253, 253, 253);
+    margin-left: 40px;
+  }
+  footer {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .links {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    background: rgb(41, 178, 73);
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .links.open {
+    max-height: 500px; /* puedes aumentar según el número de links */
+  }
+  .links a {
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .busqueda {
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .busqueda input {
+    width: 100%;
+    margin-top: auto;
+  }
+
+  .busqueda button {
+    width: 100;
+    margin-top: auto;
+  }
+  #inicio {
+    width: 100%;
+    margin: 0;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+  #inicio img {
+    width: 50%;
+    height: 100%;
+  }
+
+  #inicio .imagencafe {
+    display: none;
+  }
+
+  #inicio .bloque-inicio h1 {
+    font-size: 40px;
+    margin-top: 100px;
+    text-align: center;
+    text-shadow: 2px 0 black;
+    font-weight: 800;
+  }
+
+  #inicio .bloque-inicio p {
+    font-size: 25px;
+    margin-top: 50px;
+    text-align: center;
+    text-shadow: 2px 0 black;
+    font-weight: 800;
+  }
+
+  .bloque-inicio p {
+    font-size: 15px;
+  }
+  #servicios {
+    width: 100%;
+    height: 45%;
+    margin: 0;
+    padding: 10px;
+  }
+  #servicios .servicio img {
+    width: 100%;
+    height: 50%;
+    padding: 5px;
+    border-radius: 12px;
+  }
+  #servicios .servicio h2 {
+    font-size: 22px;
+  }
+  #servicios .servicio p {
+    font-size: 15px;
+  }
+  #servicios .servicio {
+    background-color: #bbf7ce;
+    margin: 5px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #28a745;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  #servicios .servicio a {
+    padding: 10px;
+    align-items: end;
+    justify-content: center;
+  }
+  .nosotros .card h2 {
+    font-size: 15px;
+  }
+  .nosotros .card p {
+    font-size: 15px;
+  }
+  .nosotros {
+    width: 100%;
+    position: relative;
+    top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+  }
+  .nosotros .card {
+    background-color: #bbf7ce;
+    margin: 10px;
+    width: 80%;
+    height: 25%;
+    border: 2px solid #28a745;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .nosotros .card h2 {
+    color: #087a22;
+    font-size: 25px;
+    margin: 10px;
+    text-align: center;
+  }
+
+  .nosotros .card p {
+    font-size: 15px;
+    margin: 15px;
+    text-align: justify;
+  }
+  .categorias {
+    top: 20px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 10px 10px; /* espacio filas y columnas */
+    justify-items: center;
+    align-items: center;
+    width: 80%;
+    margin: 10px;
+    height: 100%;
+    align-content: space-evenly;
+  }
+
+  .categorias .categoria {
+    text-align: center;
+  }
+
+  .categorias .categoria img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* Ajusta bien la imagen */
+    border-radius: 50%; /* Hace los íconos circulares */
+    border: 2px solid #ddd;
+    transition: transform 0.3s ease, border 0.3s ease;
+  }
+  .categoria p {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+  }
+  #testimonios {
+    margin-right: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 50%;
+    padding: 2px;
+    background: #f8fff8; /* color suave de fondo */
+  }
+  #testimonios .testimonio {
+    background: #b7fbb7;
+    border: 1px solid green;
+    border-radius: 12px;
+    width: 33.33%;
+    height: 90%;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  #testimonios .testimonio img {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  }
+  #testimonios .testimonio h2 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  #testimonios .testimonio p {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  #otros-testimonios {
+    margin-right: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 50%;
+    padding: 2px;
+    background: #f8fff8; /* color suave de fondo */
+  }
+  #otros-testimonios .testimonio {
+    background: #b7fbb7;
+    border: 1px solid green;
+    border-radius: 12px;
+    width: 33.33%;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  #otros-testimonios .testimonio img {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  }
+  #otros-testimonios .testimonio h2 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  #otros-testimonios .testimonio p {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+}
