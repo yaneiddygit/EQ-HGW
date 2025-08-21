@@ -398,7 +398,7 @@ footer {
   padding: 0;
   margin-top: 0;
   align-items: end;
-
+}
 /* ================== MEDIA QUERIES ================== */
 
 /* Tablets */
@@ -687,5 +687,6 @@ footer {
     margin-bottom: 15px;
   }
 }
+
 
 
