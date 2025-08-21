@@ -386,7 +386,7 @@ body::before {
 }
 
 /* ==== FOOTER ==== */
-.footer {
+footer {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -687,3 +687,4 @@ body::before {
     margin-bottom: 15px;
   }
 }
+
